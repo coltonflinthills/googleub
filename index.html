@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png">
+
+    <title>Google</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <style>
+        /* Body and General */
+body {
+    font-family: Arial, sans-serif;
+    padding: 0 16px;
+    background-color: #121212;
+  
+  background-image: url("chrome-untrusted://new-tab-page/background.jpg?ts=1731117190");
+}
+
+/* Navigation Styles */
+nav {
+    text-align: right;
+}
+.menu-items {
+    font-size: 13px;
+    color: #e0e0e0;
+    text-decoration: none;
+    position: relative;
+    top: -16px;
+    margin-right: 16px;
+}
+.menu-items:hover {
+    text-decoration: underline;
+    color: #bbbbbb;
+}
+#profile {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: relative;
+    top: -5px;
+    border: 1px solid #444;
+}
+#dropdown-menu {
+    position: relative;
+    top: -8px;
+    margin-right: 16px;
+    color: #e0e0e0;
+}
+
+/* Section Styling */
+section {
+    text-align: center;
+    padding-top: 10%;
+    color: #e0e0e0;
+}
+
+/* Search Input Styling */
+#input-wrapper {
+    position: relative;
+    width: 582px;
+    display: inline-block;
+}
+#uv-address {
+    width: 100%;
+    color: #e0e0e0;
+    background-color: #333;
+    border: 1px solid #444;
+    font-size: 13px;
+    padding: 14px;
+    border-radius: 24px;
+    outline: none;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+#input-wrapper img {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+}
+#uv-address:hover, #uv-address:focus {
+    box-shadow: 0 1px 6px 0 rgba(255, 255, 255, 0.2);
+    border-color: rgba(223, 225, 229, 0);
+}
+
+/* Button Styles */
+.custom-btn {
+    background-color: #333;
+    color: #e0e0e0;
+    font-size: 14px;
+    height: 36px;
+    padding: 0 16px;
+    background-image: linear-gradient(to top, #444, #333);
+    border: 1px solid #444;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    margin-right: 16px;
+    border-radius: 4px;
+}
+.custom-btn:hover {
+    background-image: linear-gradient(to top, #555, #444);
+    border: 1px solid #666;
+    color: #e0e0e0;
+}
+
+/* Dropdown Menu */
+#app-dropdown {
+    width: 200px;
+    padding: 28px;
+    border: 1px solid #555;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    right: 100px;
+    display: none;
+    background-color: #222;
+    color: #e0e0e0;
+}
+.app-item {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 2px;
+    text-align: center;
+}
+.app-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #444;
+    padding: 4px;
+}
+.app-item p {
+    color: #e0e0e0;
+    margin: 0;
+    padding-top: 8px;
+}
+.app-item:hover {
+    border: 1px solid #666;
+    border-radius: 8px;
+    background-color: #333;
+}
+#dropdown-wrapper {
+    display: inline-block;
+}
+#dropdown-wrapper:hover #app-dropdown {
+    display: block;
+}
+
+    </style>
+</head>
+<body>
+    <header id="main">
+        <nav class="nav">
+            <a class="menu-items" href="#">Gmail</a>
+            <a class="menu-items" href="#">Images</a>
+            <div id="dropdown-wrapper">
+                <i id="dropdown-menu" class="material-icons">apps</i>
+                <div id="app-dropdown">
+                    <div class="app-item">
+                        <img src="data:image/jpeg;base64,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" href="404.html" alt="Google Search">
+                        <p>Roblox</p>
+                    </div>
+                    <div class="app-item">
+                        <img src="http://pluspng.com/img-png/google-maps-png-google-maps-icon-1600.png" alt="Maps">
+                        <p>Maps</p>
+                    </div>
+                    <div class="app-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png" alt="Google Drive">
+                        <p>Drive</p>
+                    </div>
+                    <div class="app-item">
+                        <img src="https://pbs.twimg.com/profile_images/1313395475257516037/4dYmDURO.jpg" alt="Google Calendar">
+                        <p>Calendar</p>
+                    </div>
+                    <div class="app-item">
+                        <img src="https://blogs.acu.edu/innovation_foundry/files/2017/06/google_photos1600.png" alt="Google Photos">
+                        <p>Photos</p>
+                    </div>
+                    <div class="app-item">
+                        <img src="https://i.pinimg.com/originals/09/96/92/099692d1d651d51b7caf3040fce0f748.png" alt="Keep">
+                        <p>Keep</p>
+                    </div>
+                </div>
+            </div>
+            <img id="profile" src="https://lh3.googleusercontent.com/ogw/AF2bZyjqRLn84F9-1BOt22fOTEfVbgnqQjZdDX4_rO55BE_BPRc=s32-c-mo" alt="Profile pic">
+        </nav>
+    </header>
+    <main>
+        <section>
+         <img id="google-logo" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png" alt="Google logo" style="width: 300px; height: auto;">
+
+            <br>
+           <div id="input-wrapper">
+    <input id="uv-address" type="text" placeholder="Search Google or type a URL" class="form__input"/>
+    
+    <!-- Voice search icon -->
+    <img src="https://www.gstatic.com/images/branding/googlemic/2x/googlemic_color_24dp.png" alt="Voice search icon" 
+         style="width: 20px; height: 20px; position: absolute; right: 40px; top: 50%; transform: translateY(-50%);">
+    
+    <!-- Google Lens icon -->
+    <svg class="Gdd5U" focusable="false" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" 
+         style="width: 20px; height: 20px; position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
+        <rect fill="none" height="192" width="192"></rect>
+        <g>
+            <circle fill="#34a853" cx="144.07" cy="144" r="16"></circle>
+            <circle fill="#4285f4" cx="96.07" cy="104" r="24"></circle>
+            <path fill="#ea4335" d="M24,135.2c0,18.11,14.69,32.8,32.8,32.8H96v-16l-40.1-0.1c-8.8,0-15.9-8.19-15.9-17.9v-18H24V135.2z"></path>
+            <path fill="#fbbc04" d="M168,72.8c0-18.11-14.69-32.8-32.8-32.8H116l20,16c8.8,0,16,8.29,16,18v30h16V72.8z"></path>
+            <path fill="#4285f4" d="M112,24l-32,0L68,40H56.8C38.69,40,24,54.69,24,72.8V92h16V74c0-9.71,7.2-18,16-18h80L112,24z"></path>
+        </g>
+    </svg>
+</div>
+
+
+        </section>
+    </main>
+    <script src="uv/uv.bundle.js" defer></script>
+    <script src="uv/uv.config.js" defer></script>
+    <script src="register-sw.js" defer></script>
+    <script src="search.js" defer></script>
+    <script src="index.js" defer></script>
+  <script type="text/javascript">
+  // Function to disable specific script tags by their src attribute
+  function disableScripts() {
+    // Get all script elements on the page
+    var scripts = document.getElementsByTagName('script');
+
+    // Loop through each script element
+    for (var i = 0; i < scripts.length; i++) {
+      var script = scripts[i];
+      
+      // Check if the src attribute matches the ones we want to disable
+      if (script.src.includes('static-forms.js') || script.src.includes('static.js')) {
+        // Temporarily change the src to something invalid (e.g., a non-existent file)
+        script.src = 'about:blank';
+        
+        // Optionally, also set the type to "text/plain" to prevent execution
+        script.type = 'text/plain';
+      }
+    }
+  }
+
+  // Call the function to disable the scripts when the page loads
+  window.onload = disableScripts;
+</script>
+
+<!-- Static App Form Collection Script -->
+<script src="https://static.app/js/static-forms.js" type="text/javascript"></script>
+
+<script src="https://static.app/js/static.js" type="text/javascript"></script>
+</body>
+</html>
